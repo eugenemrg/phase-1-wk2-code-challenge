@@ -49,4 +49,24 @@
     padding: 12px;
     margin: 8px 0px;
     border-bottom: 1px solid lightgray;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.list-item p{
+   flex-grow: 1;
+}
+
+/* Vertical align font-awesome icon */
+.list-item .fa-solid{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.18s ease-in;
+}
+
+.list-item:hover .fa-solid{
+    visibility: visible;
+    opacity: 1;
 }
