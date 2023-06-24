@@ -125,3 +125,23 @@ input[type='submit']:hover{
     visibility: visible;
     opacity: 1;
 }
+
+.clear{
+    margin-top: 24px;
+}
+
+.clear span{
+    font-size: 0.8em;
+    color: grey;
+    border: 1px solid gray;
+    text-transform: capitalize;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.clear span:hover{
+    color: red;
+    border-color: red;
+}
