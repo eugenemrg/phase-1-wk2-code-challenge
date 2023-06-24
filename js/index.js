@@ -18,3 +18,17 @@ fetch('http://localhost:3001/characters')
             list.append(listItem)
         });
     })
+
+const formSectionHeader = document.getElementById('heading')
+formSectionHeader.addEventListener('click', (e) => {
+    e.preventDefault()
+    const form = document.getElementById('form')
+
+    if(form.classList.contains('form-visible')){
+        form.classList.toggle('form-visible')
+        document.querySelector('#heading i').classList.replace('fa-chevron-down', 'fa-chevron-right')
+    }else{
+        form.classList.toggle('form-visible')
+        document.querySelector('#heading i').classList.replace('fa-chevron-right', 'fa-chevron-down')
+    }
+})
