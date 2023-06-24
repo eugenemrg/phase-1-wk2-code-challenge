@@ -31,6 +31,10 @@
     border: 1px solid lightgray;
 }
 
+.sub-container-header{
+    padding: 0px 12px;
+}
+
 .overlay-container {
     visibility: hidden;
     z-index: -1;
