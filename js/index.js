@@ -106,12 +106,9 @@ function showItem(event, jsonData) {
     // reset votes
     const deleteButton = document.querySelector('.delete-votes')
     deleteButton.addEventListener('click', e => {
-        const newItem = {}
-        newItem.votes = 0
-
         fetch(`http://localhost:3001/characters/${jsonData.id}`, {
             method: 'PATCH',
-            body: JSON.stringify(newItem),
+            body: JSON.stringify({votes: 0}),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
