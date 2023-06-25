@@ -63,6 +63,10 @@
     text-transform: uppercase;
 }
 
+.form-container .heading:hover{
+    color: black;
+}
+
 .heading p{
     flex-grow: 1;
 }
@@ -114,6 +118,7 @@ input[type='submit']:hover{
     padding: 12px;
     margin: 8px 0px;
     border-bottom: 1px solid lightgray;
+    cursor: pointer;
 
     display: flex;
     flex-direction: row;
