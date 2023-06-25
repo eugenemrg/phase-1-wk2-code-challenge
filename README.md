@@ -3,3 +3,47 @@
 # Flataculties
 
 An app where you can vote for the cutest animal.
+
+The app can:
+- Retrieve the character data using a GET request to the '/characters' endpoint
+- List animal names from the retrieved character data
+- Show details of clicked animal’s name i.e. image and number of votes
+- Add number of votes for each animal and display number of votes in the details
+- Reset the votes back to 0 using the reset button for list or for single animal
+- Add new animals using form
+
+
+# Setup
+- Visual Studio Code
+- Windows Subsystem for Linux (WSL)
+- Local deployment and Github pages deployment
+- json-server via npm
+
+# Languages
+- Javascript
+- HTML
+- CSS
+- JSON
+
+# Author
+[eugenemrg](https://github.com/eugenemrg) 
+
+# License
+Project licensed under GNUv3. See [license](/LICENSE)
+
+Flataculties. An app where you can vote for the cutest animal.
+
+Copyright (C) 2023  [eugenemrg](https://github.com/eugenemrg) 
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>
