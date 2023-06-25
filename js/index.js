@@ -53,10 +53,10 @@ function showItem(event, jsonData) {
     votesContainer.className = 'votes'
 
     const voteIcon = document.createElement('i')
-    voteIcon.className = 'fa-solid fa-heart'
+    voteIcon.className = 'fa-regular fa-heart'
 
     const voteCount = document.createElement('span')
-    voteCount.innerText = jsonData.votes
+    voteCount.innerText = `${jsonData.votes} votes`
 
     votesContainer.append(voteIcon)
     votesContainer.append(voteCount)

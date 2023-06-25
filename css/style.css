@@ -35,7 +35,7 @@
     padding: 32px;
     border-radius: 12px;
     border: 1px solid lightgray;
-    background-color: rgba(255, 255, 255, 0.88);
+    background-color: white;
 }
 
 .sub-container-header{
@@ -171,29 +171,41 @@ input[type='submit']:hover{
 
     border-radius: 12px;
     border: 1px solid lightgray;
-    background-color: white
+    background-color: white;
 }
 
 .overlay-container .sub-container .animal{
-    border-radius: 12px;
+    border-radius: 12px 12px 0px 0px;
+
+    display: block;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 24px;
+
+    max-height: 80vh;
+    overflow-y: scroll;
 }
 
 .overlay-container .sub-container .name{
-    padding: 24px;
     text-transform: capitalize;
-    font-weight: bold;
+    margin: 0px 24px;
+    font-size: 1em;
 }
 
 .overlay-container .sub-container .votes{
-    padding: 0px 24px 24px 24px;
+    padding: 8px 24px;
+    margin-bottom: 24px;
 }
 
-.overlay-container .sub-container .votes .fa-solid{
+.overlay-container .sub-container .votes i{
     color: crimson;
-    font-size: 2.4em;
+    font-size: 1.5em;
     margin-right: 12px;
 }
 
 .overlay-container .sub-container .votes span{
-    font-size: 2.4em;
+    font-size: 1.5em;
+    font-weight: 600;
 }
