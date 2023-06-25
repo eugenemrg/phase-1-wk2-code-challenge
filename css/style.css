@@ -151,8 +151,8 @@ input[type='submit']:hover{
 }
 
 .overlay-container{
-    z-index: 2;
-    display: flex;
+    display: none;
+    z-index: -1;
     align-items: center;
     justify-content: center;
 
@@ -160,7 +160,7 @@ input[type='submit']:hover{
     backdrop-filter: blur(2px);
 }
 
-.hide-overlay-container{
-    display: none;
-    z-index: -1;
+.show-overlay-container{
+    z-index: 2;
+    display: flex;
 }

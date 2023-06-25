@@ -25,20 +25,50 @@ addButton.addEventListener('click', (e) => {
     e.preventDefault()
     const form = document.getElementById('form')
 
-    if(form.classList.contains('form-visible')){
+    if (form.classList.contains('form-visible')) {
         form.classList.toggle('form-visible')
         document.querySelector('#heading i').classList.replace('fa-chevron-down', 'fa-chevron-right')
-    }else{
+    } else {
         form.classList.toggle('form-visible')
         document.querySelector('#heading i').classList.replace('fa-chevron-right', 'fa-chevron-down')
     }
 })
 
-document.addEventListener('DOMContentLoaded', (e)=>{
+document.addEventListener('DOMContentLoaded', (e) => {
     const target = document.querySelector('.main-container')
-    target.style.backgroundImage = `url(/assets/${Math.trunc(Math.random()*10)}.jpg)`
+    target.style.backgroundImage = `url(/assets/${Math.trunc(Math.random() * 10)}.jpg)`
 })
 
 function showItem(event, jsonData) {
-    console.log(jsonData)
+    const image = document.createElement('img')
+    image.alt = jsonData.image
+    image.className = 'animal'
+    image.src = jsonData.image
+
+    const name = document.createElement('p')
+    name.className = 'name'
+    name.innerText = jsonData.name
+
+    const votesContainer = document.createElement('div')
+    votesContainer.className = 'votes'
+
+    const voteIcon = document.createElement('i')
+    voteIcon.className = 'fa-solid fa-heart'
+
+    const voteCount = document.createElement('span')
+    voteCount.innerText = jsonData.votes
+
+    votesContainer.append(voteIcon)
+    votesContainer.append(voteCount)
+
+    const details = document.querySelector('.details')
+    details.innerHTML = ''
+    details.append(image)
+    details.append(name)
+    details.append(votesContainer)
+    document.querySelector('.overlay-container').classList.add('show-overlay-container')
+}
+
+function exitOverlay() {
+    document.querySelector('.overlay-container').classList.remove('show-overlay-container')
 }
