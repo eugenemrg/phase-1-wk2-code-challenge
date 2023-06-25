@@ -152,6 +152,6 @@ function deleteAllVotes(data) {
     })
 }
 
-document.querySelector('.fa-xmark').addEventListener('click', (e) => {
+document.querySelector('.close-icon').addEventListener('click', (e) => {
     document.querySelector('.overlay-container').classList.remove('show-overlay-container')
 })
