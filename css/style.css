@@ -28,7 +28,7 @@
     background-size: cover;
 }
 
-.sub-container {
+.main-container .sub-container {
     display: block;
     flex: 0 1 480px;
 
@@ -163,4 +163,37 @@ input[type='submit']:hover{
 .show-overlay-container{
     z-index: 2;
     display: flex;
+}
+
+.overlay-container .sub-container{
+    display: block;
+    flex: 0 1 480px;
+
+    border-radius: 12px;
+    border: 1px solid lightgray;
+    background-color: white
+}
+
+.overlay-container .sub-container .animal{
+    border-radius: 12px;
+}
+
+.overlay-container .sub-container .name{
+    padding: 24px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.overlay-container .sub-container .votes{
+    padding: 0px 24px 24px 24px;
+}
+
+.overlay-container .sub-container .votes .fa-solid{
+    color: crimson;
+    font-size: 2.4em;
+    margin-right: 12px;
+}
+
+.overlay-container .sub-container .votes span{
+    font-size: 2.4em;
 }
