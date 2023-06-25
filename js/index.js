@@ -18,6 +18,11 @@ fetch('http://localhost:3008/characters')
             listItem.append(listItemIcon)
             list.append(listItem)
         });
+
+        // Delete all votes button handler
+        document.querySelector('.clear').addEventListener('click', e => {
+            deleteAllVotes(data)
+        })
     })
 
 document.querySelector('form').addEventListener('submit', (e) => {
@@ -108,7 +113,7 @@ function showItem(event, jsonData) {
     deleteButton.addEventListener('click', e => {
         fetch(`http://localhost:3008/characters/${jsonData.id}`, {
             method: 'PATCH',
-            body: JSON.stringify({votes: 0}),
+            body: JSON.stringify({ votes: 0 }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
@@ -139,3 +144,17 @@ function likeItem(event, jsonData) {
 document.querySelector('.fa-xmark').addEventListener('click', (e) => {
     document.querySelector('.overlay-container').classList.remove('show-overlay-container')
 })
+
+function deleteAllVotes(data) {
+    data.forEach(item => {
+        fetch(`http://localhost:3008/characters/${item.id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ votes: 0 }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+    })
+}
