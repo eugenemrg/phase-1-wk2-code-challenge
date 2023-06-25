@@ -17,10 +17,10 @@ The app can:
 Recommended to install the app locally as it requires locally running 'json-server' to work, it appears broken on the deployment
 
 # Setup
-- Visual Studio Code
-- Windows Subsystem for Linux (WSL)
-- Local deployment and Github pages deployment
-- json-server via npm
+- Visual Studio Code, see [here](https://code.visualstudio.com/)
+- Windows Subsystem for Linux (WSL), details [here](https://learn.microsoft.com/en-us/windows/wsl/install)
+- Local deployment and Github pages [deployment](https://eugenemrg.github.io/phase-1-wk2-code-challenge/)
+- json-server via [npm](https://www.npmjs.com/package/json-server)
 
 # Languages
 - Javascript
