@@ -159,3 +159,8 @@ input[type='submit']:hover{
     background-color: rgba(0, 0, 0, 0.80);
     backdrop-filter: blur(2px);
 }
+
+.hide-overlay-container{
+    display: none;
+    z-index: -1;
+}
