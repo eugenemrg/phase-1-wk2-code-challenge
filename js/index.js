@@ -1,10 +1,13 @@
+// Base url which path and endpoints are appended to
 const baseURL = 'http://localhost:3008'
 
+// Initial fetch for character data used to populate list on the front-end 
 fetch(`${baseURL}/characters`)
     .then(response => response.json())
     .then(data => {
         const list = document.querySelector('.list')
 
+        // Handles list item creation and adds events for the list section
         data.forEach(item => {
             const listItem = document.createElement('li')
             listItem.className = 'list-item'
@@ -21,12 +24,14 @@ fetch(`${baseURL}/characters`)
             list.append(listItem)
         });
 
-        // Delete all votes button handler
+        // Click event handler that deletes all votes for all animals
         document.querySelector('.clear').addEventListener('click', e => {
             deleteAllVotes(data)
         })
     })
 
+// Form submit event handler when submit is clicked on the add new animal form
+// Updates json-server values, adding new details
 document.querySelector('form').addEventListener('submit', (e) => {
 
     e.preventDefault()
@@ -52,6 +57,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
 
 })
 
+// Click event handler to hide/show form when clicked, change arrow icon depending on form visibility
 document.getElementById('heading').addEventListener('click', (e) => {
     e.preventDefault()
     const form = document.getElementById('form')
@@ -65,11 +71,19 @@ document.getElementById('heading').addEventListener('click', (e) => {
     }
 })
 
+// Page background image handler after DOMContentLoaded
 document.addEventListener('DOMContentLoaded', (e) => {
     const target = document.querySelector('.main-container')
     target.style.backgroundImage = `url(/assets/${Math.trunc(Math.random() * 10)}.jpg)`
 })
 
+/**
+ * Creates a modal item displayed when a name is clicked on the animal list.
+ * Generates event handlers and handles all functionality for created item inclusing voting, resets, delete, show/hide etc
+ * 
+ * @param {object} event 
+ * @param {object} jsonData 
+ */
 function showItem(event, jsonData) {
     const image = document.createElement('img')
     image.alt = jsonData.image
@@ -125,6 +139,12 @@ function showItem(event, jsonData) {
     document.querySelector('.overlay-container').classList.add('show-overlay-container')
 }
 
+/**
+ * Handles vote functionality from user vote click event for 'showItem(event, jsonData)' function
+ * 
+ * @param {object} event 
+ * @param {object} jsonData 
+ */
 function likeItem(event, jsonData) {
     const newItem = {}
     newItem.votes = jsonData.votes + 1
@@ -140,6 +160,11 @@ function likeItem(event, jsonData) {
         .then((json) => console.log(json));
 }
 
+/**
+ * Handles functionality to delete all votes for all animals for the click event of the list container 'clear all votes' button
+ * 
+ * @param {object} data Object that contains all animals and details
+ */
 function deleteAllVotes(data) {
     data.forEach(item => {
         fetch(`${baseURL}/characters/${item.id}`, {
@@ -154,6 +179,7 @@ function deleteAllVotes(data) {
     })
 }
 
+// Handles functionality of hiding the overlay (which includes the modal) showing animal details
 document.querySelector('.close-icon').addEventListener('click', (e) => {
     document.querySelector('.overlay-container').classList.remove('show-overlay-container')
 })
