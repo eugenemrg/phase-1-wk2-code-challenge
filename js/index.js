@@ -76,6 +76,12 @@ function showItem(event, jsonData) {
 
     const deleteIcon = document.createElement('i')
     deleteIcon.className = 'fa-solid fa-trash'
+    deleteIcon.addEventListener('click', (e) => {
+        fetch(`http://localhost:3001/characters/${jsonData.id}`, {
+            method: 'DELETE'
+        })
+        .then(response => console.log(response))
+    })
 
     const votesContainer = document.createElement('div')
     votesContainer.className = 'votes'
