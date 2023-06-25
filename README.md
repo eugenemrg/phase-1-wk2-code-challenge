@@ -12,6 +12,9 @@ The app can:
 - Reset the votes back to 0 using the reset button for list or for single animal
 - Add new animals using form
 
+# Intallation
+
+Recommended to install the app locally as it requires locally running 'json-server' to work, it appears broken on the deployment
 
 # Setup
 - Visual Studio Code
