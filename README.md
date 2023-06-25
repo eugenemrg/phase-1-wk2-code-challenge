@@ -51,7 +51,7 @@ Reset the votes back to 0 using the reset button for a single animal
 
 ![demo5](/demo/demo05.gif)
 
-Reset the votes back to 0 using the reset button for a all animals on the list
+Reset all the votes back to 0 using the reset button for a all animals on the list
 
 ![demo6](/demo/demo06.gif)
 
