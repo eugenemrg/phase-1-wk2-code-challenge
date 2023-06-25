@@ -182,6 +182,10 @@ input[type='submit']:hover{
     background-color: white;
 }
 
+.overlay-container .sub-container .details{
+    position: relative;
+}
+
 .overlay-container .sub-container .animal{
     border-radius: 12px 12px 0px 0px;
 
@@ -234,4 +238,20 @@ input[type='submit']:hover{
 .delete-votes span:hover{
     color: red;
     border-bottom: 2px solid red;
+}
+
+.fa-trash{
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 1em;
+    padding: 12px;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.fa-trash:hover{
+    color: gray;
 }

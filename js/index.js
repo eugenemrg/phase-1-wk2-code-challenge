@@ -74,6 +74,9 @@ function showItem(event, jsonData) {
     name.className = 'name'
     name.innerText = jsonData.name
 
+    const deleteIcon = document.createElement('i')
+    deleteIcon.className = 'fa-solid fa-trash'
+
     const votesContainer = document.createElement('div')
     votesContainer.className = 'votes'
 
@@ -91,6 +94,7 @@ function showItem(event, jsonData) {
     details.append(image)
     details.append(name)
     details.append(votesContainer)
+    details.append(deleteIcon)
     document.querySelector('.overlay-container').classList.add('show-overlay-container')
 }
 
