@@ -28,6 +28,11 @@ Recommended to install the app locally as it requires locally running 'json-serv
 - CSS
 - JSON
 
+# Demo
+
+Adding a new animal
+![demo1](/demo/demo1.gif)
+
 # Author
 [eugenemrg](https://github.com/eugenemrg) 
 
