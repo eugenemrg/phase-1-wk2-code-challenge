@@ -26,8 +26,8 @@ fetch('http://localhost:3008/characters')
     })
 
 document.querySelector('form').addEventListener('submit', (e) => {
-    e.preventDefault()
 
+    e.preventDefault()
     const form = document.querySelector('form');
 
     const newItem = {}
@@ -50,8 +50,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
 
 })
 
-const addButton = document.getElementById('heading')
-addButton.addEventListener('click', (e) => {
+document.getElementById('heading').addEventListener('click', (e) => {
     e.preventDefault()
     const form = document.getElementById('form')
 
@@ -79,15 +78,6 @@ function showItem(event, jsonData) {
     name.className = 'name'
     name.innerText = jsonData.name
 
-    const deleteIcon = document.createElement('i')
-    deleteIcon.className = 'fa-solid fa-trash'
-    deleteIcon.addEventListener('click', (e) => {
-        fetch(`http://localhost:3008/characters/${jsonData.id}`, {
-            method: 'DELETE'
-        })
-            .then(response => console.log(response))
-    })
-
     const votesContainer = document.createElement('div')
     votesContainer.className = 'votes'
 
@@ -101,6 +91,15 @@ function showItem(event, jsonData) {
     votesContainer.append(voteIcon)
     votesContainer.append(voteCount)
 
+    const deleteIcon = document.createElement('i')
+    deleteIcon.className = 'fa-solid fa-trash'
+    deleteIcon.addEventListener('click', (e) => {
+        fetch(`http://localhost:3008/characters/${jsonData.id}`, {
+            method: 'DELETE'
+        })
+            .then(response => console.log(response))
+    })
+
     const details = document.querySelector('.details')
     details.innerHTML = ''
     details.append(image)
@@ -109,8 +108,7 @@ function showItem(event, jsonData) {
     details.append(deleteIcon)
 
     // reset votes
-    const deleteButton = document.querySelector('.delete-votes')
-    deleteButton.addEventListener('click', e => {
+    document.querySelector('.delete-votes').addEventListener('click', e => {
         fetch(`http://localhost:3008/characters/${jsonData.id}`, {
             method: 'PATCH',
             body: JSON.stringify({ votes: 0 }),
@@ -126,7 +124,6 @@ function showItem(event, jsonData) {
 }
 
 function likeItem(event, jsonData) {
-
     const newItem = {}
     newItem.votes = jsonData.votes + 1
 
@@ -141,10 +138,6 @@ function likeItem(event, jsonData) {
         .then((json) => console.log(json));
 }
 
-document.querySelector('.fa-xmark').addEventListener('click', (e) => {
-    document.querySelector('.overlay-container').classList.remove('show-overlay-container')
-})
-
 function deleteAllVotes(data) {
     data.forEach(item => {
         fetch(`http://localhost:3008/characters/${item.id}`, {
@@ -158,3 +151,7 @@ function deleteAllVotes(data) {
             .then((json) => console.log(json));
     })
 }
+
+document.querySelector('.fa-xmark').addEventListener('click', (e) => {
+    document.querySelector('.overlay-container').classList.remove('show-overlay-container')
+})
