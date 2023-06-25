@@ -1,4 +1,6 @@
-fetch('http://localhost:3008/characters')
+const baseURL = 'http://localhost:3008'
+
+fetch(`${baseURL}/characters`)
     .then(response => response.json())
     .then(data => {
         const list = document.querySelector('.list')
@@ -36,7 +38,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
     newItem.votes = 0
 
     if (newItem.name !== '' && newItem.image !== '') {
-        let response = fetch('http://localhost:3008/characters', {
+        let response = fetch(`${baseURL}/characters`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
@@ -94,7 +96,7 @@ function showItem(event, jsonData) {
     const deleteIcon = document.createElement('i')
     deleteIcon.className = 'fa-solid fa-trash'
     deleteIcon.addEventListener('click', (e) => {
-        fetch(`http://localhost:3008/characters/${jsonData.id}`, {
+        fetch(`${baseURL}/characters/${jsonData.id}`, {
             method: 'DELETE'
         })
             .then(response => console.log(response))
@@ -109,7 +111,7 @@ function showItem(event, jsonData) {
 
     // reset votes
     document.querySelector('.delete-votes').addEventListener('click', e => {
-        fetch(`http://localhost:3008/characters/${jsonData.id}`, {
+        fetch(`${baseURL}/characters/${jsonData.id}`, {
             method: 'PATCH',
             body: JSON.stringify({ votes: 0 }),
             headers: {
@@ -127,7 +129,7 @@ function likeItem(event, jsonData) {
     const newItem = {}
     newItem.votes = jsonData.votes + 1
 
-    fetch(`http://localhost:3008/characters/${jsonData.id}`, {
+    fetch(`${baseURL}/characters/${jsonData.id}`, {
         method: 'PATCH',
         body: JSON.stringify(newItem),
         headers: {
@@ -140,7 +142,7 @@ function likeItem(event, jsonData) {
 
 function deleteAllVotes(data) {
     data.forEach(item => {
-        fetch(`http://localhost:3008/characters/${item.id}`, {
+        fetch(`${baseURL}/characters/${item.id}`, {
             method: 'PATCH',
             body: JSON.stringify({ votes: 0 }),
             headers: {
