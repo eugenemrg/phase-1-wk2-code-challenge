@@ -6,7 +6,7 @@ fetch('http://localhost:3001/characters')
         data.forEach(item => {
             const listItem = document.createElement('li')
             listItem.className = 'list-item'
-            listItem.addEventListener('click', (e) => showItem(e, item.id))
+            listItem.addEventListener('click', (e) => showItem(e, item))
 
             const listItemName = document.createElement('p')
             listItemName.innerText = item.name
@@ -39,6 +39,6 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     target.style.backgroundImage = `url(/assets/${Math.trunc(Math.random()*10)}.jpg)`
 })
 
-function showItem(event, jsonID) {
-    console.log(jsonID)
+function showItem(event, jsonData) {
+    console.log(jsonData)
 }
