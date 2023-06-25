@@ -1,6 +1,6 @@
 const list = document.querySelector('.list')
 
-fetch('http://localhost:3001/characters')
+fetch('http://localhost:3008/characters')
     .then(response => response.json())
     .then(data => {
         data.forEach(item => {
@@ -31,7 +31,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
     newItem.votes = 0
 
     if (newItem.name !== '' && newItem.image !== '') {
-        let response = fetch('http://localhost:3001/characters', {
+        let response = fetch('http://localhost:3008/characters', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
@@ -77,7 +77,7 @@ function showItem(event, jsonData) {
     const deleteIcon = document.createElement('i')
     deleteIcon.className = 'fa-solid fa-trash'
     deleteIcon.addEventListener('click', (e) => {
-        fetch(`http://localhost:3001/characters/${jsonData.id}`, {
+        fetch(`http://localhost:3008/characters/${jsonData.id}`, {
             method: 'DELETE'
         })
             .then(response => console.log(response))
@@ -106,7 +106,7 @@ function showItem(event, jsonData) {
     // reset votes
     const deleteButton = document.querySelector('.delete-votes')
     deleteButton.addEventListener('click', e => {
-        fetch(`http://localhost:3001/characters/${jsonData.id}`, {
+        fetch(`http://localhost:3008/characters/${jsonData.id}`, {
             method: 'PATCH',
             body: JSON.stringify({votes: 0}),
             headers: {
@@ -125,7 +125,7 @@ function likeItem(event, jsonData) {
     const newItem = {}
     newItem.votes = jsonData.votes + 1
 
-    fetch(`http://localhost:3001/characters/${jsonData.id}`, {
+    fetch(`http://localhost:3008/characters/${jsonData.id}`, {
         method: 'PATCH',
         body: JSON.stringify(newItem),
         headers: {
