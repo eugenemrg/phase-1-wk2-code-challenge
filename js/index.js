@@ -33,3 +33,7 @@ addButton.addEventListener('click', (e) => {
     }
 })
 
+document.addEventListener('DOMContentLoaded', (e)=>{
+    const target = document.querySelector('.container')
+    target.style.backgroundImage = `url(/assets/${Math.trunc(Math.random()*10)}.jpg)`
+})
