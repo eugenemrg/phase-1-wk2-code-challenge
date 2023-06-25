@@ -15,7 +15,7 @@ The app can:
 
 # Intallation
 
-Recommended to install the app locally as it requires locally running 'json-server' to work, it appears broken on the deployment
+Recommend local installation as the app requires locally running 'json-server' to work, the website appears broken if you use the deployment link. 'json-server' causes reload when changed.
 
 # Setup
 - Visual Studio Code, see [here](https://code.visualstudio.com/)
