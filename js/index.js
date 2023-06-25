@@ -136,6 +136,6 @@ function likeItem(event, jsonData) {
         .then((json) => console.log(json));
 }
 
-document.querySelector('.fa-circle-xmark').addEventListener('click', (e) => {
+document.querySelector('.fa-xmark').addEventListener('click', (e) => {
     document.querySelector('.overlay-container').classList.remove('show-overlay-container')
 })
