@@ -1,8 +1,8 @@
-const list = document.querySelector('.list')
-
 fetch('http://localhost:3008/characters')
     .then(response => response.json())
     .then(data => {
+        const list = document.querySelector('.list')
+
         data.forEach(item => {
             const listItem = document.createElement('li')
             listItem.className = 'list-item'
