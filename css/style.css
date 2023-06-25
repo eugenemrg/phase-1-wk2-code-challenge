@@ -11,7 +11,7 @@
     height: 100vh;
 }
 
-.container{
+.container {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -38,15 +38,15 @@
     background-color: white;
 }
 
-.sub-container-header{
+.sub-container-header {
     padding: 0px 12px;
 }
 
-.form-container{
+.form-container {
     padding: 12px;
 }
 
-.form-container .heading{
+.form-container .heading {
     display: flex;
     flex-direction: row;
     font-size: 0.8em;
@@ -55,29 +55,29 @@
     text-transform: uppercase;
 }
 
-.form-container .heading:hover{
+.form-container .heading:hover {
     color: black;
 }
 
-.heading p{
+.heading p {
     flex-grow: 1;
 }
 
-.heading .fa-solid{
+.heading .fa-solid {
     display: flex;
     align-items: center;
 }
 
-.form-hidden{
+.form-hidden {
     margin-top: 12px;
     display: none;
 }
 
-.form-visible{
+.form-visible {
     display: block;
 }
 
-input{
+input {
     padding: 8px 16px;
     border: 1px solid lightgray;
     width: 100%;
@@ -86,7 +86,7 @@ input{
     font-size: 0.8em;
 }
 
-input[type='submit']{
+input[type='submit'] {
     border: 0px;
     background-color: rgb(21, 21, 21);
     color: white;
@@ -94,11 +94,11 @@ input[type='submit']{
     cursor: pointer;
 }
 
-input[type='submit']:hover{
+input[type='submit']:hover {
     background-color: rgb(44, 44, 44);
 }
 
-.list-header{
+.list-header {
     padding: 16px 12px 4px 12px;
 }
 
@@ -116,28 +116,28 @@ input[type='submit']:hover{
     flex-direction: row;
 }
 
-.list-item p{
-   flex-grow: 1;
+.list-item p {
+    flex-grow: 1;
 }
 
 /* Vertical align font-awesome icon */
-.list-item .fa-solid{
+.list-item .fa-solid {
     display: flex;
     align-items: center;
     opacity: 0;
     transition: opacity 0.18s ease-in;
 }
 
-.list-item:hover .fa-solid{
+.list-item:hover .fa-solid {
     visibility: visible;
     opacity: 1;
 }
 
-.clear{
+.clear {
     margin-top: 28px;
 }
 
-.clear span{
+.clear span {
     font-size: 0.8em;
     padding: 2px 0px;
     margin-left: 12px;
@@ -146,11 +146,11 @@ input[type='submit']:hover{
     text-transform: uppercase;
 }
 
-.clear span:hover{
+.clear span:hover {
     border-bottom: 2px solid red;
 }
 
-.overlay-container{
+.overlay-container {
     display: none;
     z-index: -1;
     align-items: center;
@@ -160,12 +160,12 @@ input[type='submit']:hover{
     backdrop-filter: blur(2px);
 }
 
-.show-overlay-container{
+.show-overlay-container {
     z-index: 2;
     display: flex;
 }
 
-.close-icon{
+.close-icon {
     position: absolute;
     font-size: 1.6em;
     padding: 16px;
@@ -175,11 +175,11 @@ input[type='submit']:hover{
     right: 12px;
 }
 
-.close-icon:hover{
+.close-icon:hover {
     color: lightgray;
 }
 
-.overlay-container .sub-container{
+.overlay-container .sub-container {
     display: block;
     flex: 0 1 480px;
 
@@ -188,11 +188,11 @@ input[type='submit']:hover{
     background-color: white;
 }
 
-.overlay-container .sub-container .details{
+.overlay-container .sub-container .details {
     position: relative;
 }
 
-.overlay-container .sub-container .animal{
+.overlay-container .sub-container .animal {
     border-radius: 12px 12px 0px 0px;
 
     display: block;
@@ -206,35 +206,34 @@ input[type='submit']:hover{
     overflow-y: scroll;
 }
 
-.overlay-container .sub-container .name{
+.overlay-container .sub-container .name {
     text-transform: capitalize;
     margin: 0px 24px;
     font-size: 1em;
 }
 
-.overlay-container .sub-container .votes{
+.overlay-container .sub-container .votes {
     padding: 8px 24px;
-    /* margin-bottom: 24px; */
 }
 
-.overlay-container .sub-container .votes i{
+.overlay-container .sub-container .votes i {
     color: crimson;
     font-size: 1.5em;
     margin-right: 12px;
     cursor: pointer;
 }
 
-.overlay-container .sub-container .votes span{
+.overlay-container .sub-container .votes span {
     font-size: 1.5em;
     font-weight: 600;
 }
 
-.overlay-container .delete-votes{
+.overlay-container .delete-votes {
     padding: 0px 24px;
     margin-bottom: 24px;
 }
 
-.delete-votes span{
+.delete-votes span {
     font-size: 0.8em;
     padding: 2px 0px;
     color: grey;
@@ -242,12 +241,12 @@ input[type='submit']:hover{
     text-transform: uppercase;
 }
 
-.delete-votes span:hover{
+.delete-votes span:hover {
     color: red;
     border-bottom: 2px solid red;
 }
 
-.fa-trash{
+.fa-trash {
     position: absolute;
     top: 16px;
     left: 16px;
@@ -259,6 +258,6 @@ input[type='submit']:hover{
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.fa-trash:hover{
+.fa-trash:hover {
     color: gray;
 }
