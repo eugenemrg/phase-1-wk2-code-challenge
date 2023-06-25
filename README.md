@@ -11,6 +11,7 @@ The app can:
 - Add number of votes for each animal and display number of votes in the details
 - Reset the votes back to 0 using the reset button for list or for single animal
 - Add new animals using form
+- Delete animals from the list
 
 # Intallation
 
@@ -30,8 +31,33 @@ Recommended to install the app locally as it requires locally running 'json-serv
 
 # Demo
 
+List all names retrieved from character data
+
+![demo1](/demo/demo01.gif)
+
+Show details of clicked animal i.e. image and number of votes
+
+![demo2](/demo/demo02.gif)
+
+Add number of votes for each animal and display number of votes
+
+![demo3](/demo/demo03.gif)
+
 Adding a new animal
-![demo1](/demo/demo1.gif)
+
+![demo4](/demo/demo04.gif)
+
+Reset the votes back to 0 using the reset button for a single animal
+
+![demo5](/demo/demo05.gif)
+
+Reset the votes back to 0 using the reset button for a all animals on the list
+
+![demo6](/demo/demo06.gif)
+
+Delete an animal from the list
+
+![demo7](/demo/demo07.gif)
 
 # Author
 [eugenemrg](https://github.com/eugenemrg) 
