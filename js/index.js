@@ -39,7 +39,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
             body: JSON.stringify(newItem)
         })
         console.log(response)
-    }else{
+    } else {
         alert('Empty/Invalid name or url')
     }
 
@@ -80,7 +80,7 @@ function showItem(event, jsonData) {
         fetch(`http://localhost:3001/characters/${jsonData.id}`, {
             method: 'DELETE'
         })
-        .then(response => console.log(response))
+            .then(response => console.log(response))
     })
 
     const votesContainer = document.createElement('div')
@@ -88,9 +88,10 @@ function showItem(event, jsonData) {
 
     const voteIcon = document.createElement('i')
     voteIcon.className = 'fa-regular fa-heart'
+    voteIcon.addEventListener('click', (e) => likeItem(e, jsonData))
 
     const voteCount = document.createElement('span')
-    voteCount.innerText = `${jsonData.votes} votes`
+    voteCount.innerText = `${jsonData.votes} ${(jsonData.votes === 1) ? 'vote' : 'votes'}`
 
     votesContainer.append(voteIcon)
     votesContainer.append(voteCount)
@@ -102,6 +103,22 @@ function showItem(event, jsonData) {
     details.append(votesContainer)
     details.append(deleteIcon)
     document.querySelector('.overlay-container').classList.add('show-overlay-container')
+}
+
+function likeItem(event, jsonData) {
+
+    const newItem = {}
+    newItem.votes = jsonData.votes + 1
+
+    fetch(`http://localhost:3001/characters/${jsonData.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(newItem),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
 }
 
 document.querySelector('.fa-circle-xmark').addEventListener('click', (e) => {
