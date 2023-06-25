@@ -19,8 +19,8 @@ fetch('http://localhost:3001/characters')
         });
     })
 
-const formSectionHeader = document.getElementById('heading')
-formSectionHeader.addEventListener('click', (e) => {
+const addButton = document.getElementById('heading')
+addButton.addEventListener('click', (e) => {
     e.preventDefault()
     const form = document.getElementById('form')
 
@@ -32,3 +32,4 @@ formSectionHeader.addEventListener('click', (e) => {
         document.querySelector('#heading i').classList.replace('fa-chevron-right', 'fa-chevron-down')
     }
 })
+
