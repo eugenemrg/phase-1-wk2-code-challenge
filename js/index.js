@@ -102,6 +102,24 @@ function showItem(event, jsonData) {
     details.append(name)
     details.append(votesContainer)
     details.append(deleteIcon)
+
+    // reset votes
+    const deleteButton = document.querySelector('.delete-votes')
+    deleteButton.addEventListener('click', e => {
+        const newItem = {}
+        newItem.votes = 0
+
+        fetch(`http://localhost:3001/characters/${jsonData.id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(newItem),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+    })
+
     document.querySelector('.overlay-container').classList.add('show-overlay-container')
 }
 
