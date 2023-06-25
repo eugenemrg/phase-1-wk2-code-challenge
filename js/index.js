@@ -99,7 +99,16 @@ function showItem(event, jsonData) {
 
     const voteIcon = document.createElement('i')
     voteIcon.className = 'fa-regular fa-heart'
-    voteIcon.addEventListener('click', (e) => likeItem(e, jsonData))
+    voteIcon.addEventListener('click', (e) => {
+        voteIcon.className = 'fa-regular fa-heart'
+        likeItem(e, jsonData)
+    })
+    voteIcon.addEventListener('mouseenter', (e) => {
+        voteIcon.className = 'fa-solid fa-heart'
+    })
+    voteIcon.addEventListener('mouseleave', (e) => {
+        voteIcon.className = 'fa-regular fa-heart'
+    })
 
     const voteCount = document.createElement('span')
     voteCount.innerText = `${jsonData.votes} ${(jsonData.votes === 1) ? 'vote' : 'votes'}`
