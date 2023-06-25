@@ -20,6 +20,31 @@ fetch('http://localhost:3001/characters')
         });
     })
 
+document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const form = document.querySelector('form');
+
+    const newItem = {}
+    newItem.name = form.animal.value
+    newItem.image = form.imageUrl.value
+    newItem.votes = 0
+
+    if (newItem.name !== '' && newItem.image !== '') {
+        let response = fetch('http://localhost:3001/characters', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(newItem)
+        })
+        console.log(response)
+    }else{
+        alert('Empty/Invalid name or url')
+    }
+
+})
+
 const addButton = document.getElementById('heading')
 addButton.addEventListener('click', (e) => {
     e.preventDefault()
