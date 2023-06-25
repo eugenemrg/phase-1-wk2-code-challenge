@@ -204,7 +204,7 @@ input[type='submit']:hover{
 
 .overlay-container .sub-container .votes{
     padding: 8px 24px;
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
 }
 
 .overlay-container .sub-container .votes i{
@@ -216,4 +216,22 @@ input[type='submit']:hover{
 .overlay-container .sub-container .votes span{
     font-size: 1.5em;
     font-weight: 600;
+}
+
+.overlay-container .delete-votes{
+    padding: 0px 24px;
+    margin-bottom: 24px;
+}
+
+.delete-votes span{
+    font-size: 0.8em;
+    padding: 2px 0px;
+    color: grey;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.delete-votes span:hover{
+    color: red;
+    border-bottom: 2px solid red;
 }
