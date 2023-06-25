@@ -69,6 +69,6 @@ function showItem(event, jsonData) {
     document.querySelector('.overlay-container').classList.add('show-overlay-container')
 }
 
-function exitOverlay() {
+document.querySelector('.fa-circle-xmark').addEventListener('click', (e) => {
     document.querySelector('.overlay-container').classList.remove('show-overlay-container')
-}
+})

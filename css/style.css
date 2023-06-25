@@ -165,6 +165,14 @@ input[type='submit']:hover{
     display: flex;
 }
 
+.close-icon{
+    position: absolute;
+    font-size: 2.4em;
+    color: white;
+    top: 24px;
+    right: 24px;
+}
+
 .overlay-container .sub-container{
     display: block;
     flex: 0 1 480px;
