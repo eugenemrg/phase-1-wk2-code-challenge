@@ -13,7 +13,7 @@ The app can:
 - Add new animals using form
 - Delete animals from the list
 
-# Intallation
+# Installation
 
 Recommend local installation as the app requires locally running 'json-server' to work, the website appears broken if you use the deployment link.
 
